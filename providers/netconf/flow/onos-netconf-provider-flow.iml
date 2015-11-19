@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Osmorc" name="OSGi">
+      <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="onos-netconf-provider-flow-1.3.0.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="org.onosproject.onos-netconf-provider-flow" bundleVersion="1.3.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+        <additionalProperties>
+          <property key="Bundle-Description" value="ONOS Netconf protocol adapters" />
+          <property key="Export-Package" value="com.tailf.jnc,ch.ethz.ssh2,ch.ethz.ssh2.auth,ch.ethz.ssh2.channel,ch.ethz.ssh2.crypto,ch.ethz.ssh2.crypto.cipher,ch.ethz.ssh2.crypto.dh,ch.ethz.ssh2.crypto.digest,ch.ethz.ssh2.log,ch.ethz.ssh2.packets,ch.ethz.ssh2.server,ch.ethz.ssh2.sftp,ch.ethz.ssh2.signature,ch.ethz.ssh2.transport,ch.ethz.ssh2.util,org.jdom2,org.jdom2.input,org.jdom2.output,org.jdom2.adapters,org.jdom2.filter,org.jdom2.internal,org.jdom2.located,org.jdom2.transform,org.jdom2.util,org.jdom2.xpath,org.jdom2.input.sax,org.jdom2.input.stax,org.jdom2.output.support,org.jdom2.xpath.jaxen,org.jdom2.xpath.util,org.opendaylight.yang.gen.v1.urn.ietf.params.xml.ns.yang.ietf.acl.rev140520,org.opendaylight.yangtools.yang.data.impl.schema.tree,org.opendaylight.yangtools.yang.data.impl.codec,org.opendaylight.yangtools.yang.model.parser.api,org.opendaylight.yangtools.yang.data.impl.schema.nodes,org.opendaylight.yangtools.yang.binding.util,org.opendaylight.yangtools.yang.data.impl,org.opendaylight.yangtools.sal.binding.generator.impl,org.opendaylight.yangtools.yang.parser.impl.util,org.opendaylight.yang.gen.v1.urn.ietf.params.xml.ns.yang.packet.fields.rev140625,org.opendaylight.yangtools.yang.data.api,org.opendaylight.yangtools.objcache.spi,org.opendaylight.yangtools.yang.data.impl.schema.transform.base.parser,org.opendaylight.yangtools.maven.sal.api.gen.plugin,org.opendaylight.yangtools.yang.data.impl.schema.builder.impl,org.opendaylight.yangtools.yang.data.api.schema.tree,org.opendaylight.yangtools.binding.generator.util,org.opendaylight.yangtools.sal.binding.generator.spi,org.opendaylight.yang.gen.v1.urn.ietf.params.xml.ns.yang.ietf.yang.types.rev130715,org.opendaylight.yangtools.yang2sources.spi,org.opendaylight.yangtools.yang.model.repo.api,org.opendaylight.yangtools.util,org.opendaylight.yangtools.yang.parser.util,org.opendaylight.yangtools.yang.data.api.schema.stream,org.opendaylight.yangtools.yang.data.impl.schema.transform.base.serializer,org.opendaylight.yangtools.concepts,org.opendaylight.yangtools.yang.binding,org.opendaylight.yangtools.yang.model.util.repo,org.opendaylight.yangtools.yang.wadl.generator.maven,org.opendaylight.yangtools.yang.data.api.schema,org.opendaylight.yang.gen.v1.urn.ietf.params.xml.ns.yang.ietf.acl.rev140520.access.list.access.list.entries.matches.ace.type,org.opendaylight.yangtools.concepts.util,org.opendaylight.yang.gen.v1.urn.ietf.params.xml.ns.yang.ietf.acl.rev140520.access.list.access.list.entries,org.opendaylight.yang.gen.v1.urn.ietf.params.xml.ns.yang.ietf.acl.rev140520.access.list.access.list.entries.matches.ace.type.ace.ip.ace.ip.version,org.opendaylight.yangtools.sal.binding.model.api,org.opendaylight.yang.gen.v1.urn.ietf.params.xml.ns.yang.ietf.acl.rev140520.access.list.access.list.entries.matches.ace.type.ace.ip,org.opendaylight.yangtools.yang.data.impl.schema.builder.api,org.opendaylight.yangtools.util.concurrent,org.opendaylight.yangtools.yang.parser.builder.impl,org.opendaylight.yangtools.yang.data.impl.schema.transform.base,org.opendaylight.yang.gen.v1.urn.ietf.params.xml.ns.yang.ietf.acl.rev140520.access.list.access.list.entries.actions.packet.handling,org.opendaylight.yangtools.sal.binding.model.api.type.builder,org.opendaylight.yang.gen.v1.urn.ietf.params.xml.ns.yang.packet.fields.rev140625.acl.transport.header.fields,org.opendaylight.yangtools.yang2sources.plugin,org.opendaylight.yangtools.yang.data.impl.codec.xml,org.opendaylight.yangtools.antlrv4.code.gen,org.opendaylight.yangtools.yang.parser.builder.util,org.opendaylight.yangtools.yang.data.impl.schema.transform,org.opendaylight.yangtools.yang.model.api.type,org.opendaylight.yangtools.yang.data.impl.schema.transform.dom.serializer,org.opendaylight.yangtools.yang.data.api.schema.tree.spi,org.opendaylight.yangtools.yang.data.impl.schema.transform.dom.parser,org.opendaylight.yangtools.sal.binding.yang.types,org.opendaylight.yangtools.yang.data.impl.schema.transform.dom,org.opendaylight.yangtools.yang.data.impl.util,org.opendaylight.yang.gen.v1.urn.ietf.params.xml.ns.yang.packet.fields.rev140625.timerange,org.opendaylight.yangtools.sal.binding.generator.api,org.opendaylight.yangtools.sal.java.api.generator,org.opendaylight.yangtools.yang.binding.annotations,org.opendaylight.yangtools.sal.binding.generator.util,org.opendaylight.yangtools.yang.model.repo.util,org.opendaylight.yangtools.yang.model.api,org.opendaylight.yangtools.yang.common,org.opendaylight.yangtools.yang.wadl.generator,org.opendaylight.yangtools.yang.parser.builder.api,org.opendaylight.yangtools.yang.model.util,org.opendaylight.yangtools.yang.parser.impl,org.opendaylight.yangtools.yang.data.impl.schema,org.opendaylight.yangtools.yang.data.api.codec,org.opendaylight.yangtools.yang.unified.doc.generator,org.opendaylight.yang.gen.v1.urn.ietf.params.xml.ns.yang.ietf.acl.rev140520.access.list,org.opendaylight.yangtools.objcache,org.opendaylight.yang.gen.v1.urn.ietf.params.xml.ns.yang.ietf.acl.rev140520.access.list.access.list.entries.actions,org.opendaylight.yangtools.yang.data.util,org.opendaylight.yangtools.yang.unified.doc.generator.maven,org.opendaylight.yangtools.binding.generator.util.generated.type.builder,org.opendaylight.yangtools.yang.model.repo.spi,org.opendaylight.yangtools.yang.parser.repo,org.opendaylight.yang.gen.v1.urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715,org.opendaylight.yang.gen.v1.urn.ietf.params.xml.ns.yang.ietf.acl.rev140520.access.list.access.list.entries.matches,org.opendaylight.yangtools.yang.data.impl.schema.builder.impl.valid,com.romix.scala,com.romix.scala.collection,com.romix.scala.collection.concurrent,org.opendaylight.yangtools.objcache.impl" />
+          <property key="Bundle-Name" value="onos-netconf-provider-flow" />
+        </additionalProperties>
+        <additionalJARContents />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.osgi:org.osgi.compendium:4.3.1" level="project" />
+    <orderEntry type="library" name="Maven: ch.ethz.ganymed:ganymed-ssh2:262" level="project" />
+    <orderEntry type="library" name="Maven: org.onosproject:jnc:1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jdom:jdom2:2.0.5" level="project" />
+    <orderEntry type="library" name="Maven: jaxen:jaxen:1.1.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.osgi:org.osgi.core:4.3.1" level="project" />
+    <orderEntry type="module" module-name="onlab-junit" scope="TEST" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.google.guava:guava-testlib:18.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:1.3.9" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.google.truth:truth:0.23" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:18.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.easymock:easymock:3.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: cglib:cglib-nodep:2.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.objenesis:objenesis:2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.onosproject:onos-yang-tool:1.3" level="project" />
+    <orderEntry type="library" name="Maven: org.opendaylight.yangtools:yang-binding:0.6.2-Helium" level="project" />
+    <orderEntry type="library" name="Maven: org.opendaylight.yangtools:concepts:0.6.2-Helium" level="project" />
+    <orderEntry type="library" name="Maven: org.opendaylight.yangtools:util:0.6.2-Helium" level="project" />
+    <orderEntry type="library" name="Maven: com.github.romix:java-concurrent-hash-trie-map:0.2.23" level="project" />
+    <orderEntry type="library" name="Maven: org.opendaylight.yangtools:yang-common:0.6.2-Helium" level="project" />
+    <orderEntry type="library" name="Maven: org.opendaylight.yangtools:object-cache-api:0.6.2-Helium" level="project" />
+    <orderEntry type="module" module-name="onos-api" scope="TEST" production-on-test="" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:2.5" level="project" />
+    <orderEntry type="library" name="Maven: commons-configuration:commons-configuration:1.10" level="project" />
+    <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.1" level="project" />
+    <orderEntry type="module" module-name="onlab-osgi" />
+    <orderEntry type="module" module-name="onlab-rest" />
+    <orderEntry type="module" module-name="onos-api" />
+    <orderEntry type="module" module-name="onos-incubator-api" />
+    <orderEntry type="module" module-name="onlab-misc" />
+    <orderEntry type="library" name="Maven: io.netty:netty:3.9.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.3.2" level="project" />
+    <orderEntry type="library" name="Maven: com.eclipsesource.minimal-json:minimal-json:0.9.1" level="project" />
+    <orderEntry type="library" name="Maven: com.esotericsoftware:kryo:3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.esotericsoftware:reflectasm:1.10.0" level="project" />
+    <orderEntry type="library" name="Maven: org.ow2.asm:asm:4.2" level="project" />
+    <orderEntry type="library" name="Maven: com.esotericsoftware:minlog:1.3.0" level="project" />
+    <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-core:3.1.0" level="project" />
+    <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-json:3.1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.felix:org.apache.felix.scr.annotations:1.9.8" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.11" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-library:1.3" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.slf4j:slf4j-api:1.7.6" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.slf4j:slf4j-jdk14:1.7.6" level="project" />
+  </component>
+</module>
