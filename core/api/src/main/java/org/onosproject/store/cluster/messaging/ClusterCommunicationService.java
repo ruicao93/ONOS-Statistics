@@ -15,12 +15,14 @@
  */
 package org.onosproject.store.cluster.messaging;
 
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.ObjDoubleConsumer;
 
 import org.onosproject.cluster.NodeId;
 
@@ -163,4 +165,10 @@ public interface ClusterCommunicationService {
      * @param subject message subject
      */
     void removeSubscriber(MessageSubject subject);
+
+    void startMessageStatistics();
+    void stopMessageStatistics();
+    void restartMessageStatistics();
+    public Map<Endpoint,Long> getReceivedMessageCount();
+    public Map<Endpoint,Long> getSendedMessageCount();
 }

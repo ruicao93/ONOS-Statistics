@@ -15,12 +15,16 @@
  */
 package org.onosproject.store.cluster.messaging.impl;
 
+import com.sun.org.apache.bcel.internal.classfile.Node;
+import com.sun.org.apache.xml.internal.serializer.utils.Messages;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.ReferenceCardinality;
 import org.apache.felix.scr.annotations.Service;
+import org.onlab.netty.InternalMessage;
+import org.onlab.nio.Message;
 import org.onlab.util.Tools;
 import org.onosproject.cluster.ClusterService;
 import org.onosproject.cluster.ControllerNode;
@@ -35,7 +39,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Objects;
-import java.util.Set;
+
+import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
@@ -60,6 +65,10 @@ public class ClusterCommunicationManager
 
     private NodeId localNodeId;
 
+    //message statistics
+    private ClusterMessageStatistician statistician = null;
+    private Boolean statisticsFlag = false;
+
     @Activate
     public void activate() {
         localNodeId = clusterService.getLocalNode().id();
@@ -76,13 +85,13 @@ public class ClusterCommunicationManager
                               MessageSubject subject,
                               Function<M, byte[]> encoder) {
         multicast(message,
-                  subject,
-                  encoder,
-                  clusterService.getNodes()
-                      .stream()
-                      .filter(node -> !Objects.equal(node, clusterService.getLocalNode()))
-                      .map(ControllerNode::id)
-                      .collect(Collectors.toSet()));
+                subject,
+                encoder,
+                clusterService.getNodes()
+                        .stream()
+                        .filter(node -> !Objects.equal(node, clusterService.getLocalNode()))
+                        .map(ControllerNode::id)
+                        .collect(Collectors.toSet()));
     }
 
     @Override
@@ -90,12 +99,12 @@ public class ClusterCommunicationManager
                                          MessageSubject subject,
                                          Function<M, byte[]> encoder) {
         multicast(message,
-                  subject,
-                  encoder,
-                  clusterService.getNodes()
-                      .stream()
-                      .map(ControllerNode::id)
-                      .collect(Collectors.toSet()));
+                subject,
+                encoder,
+                clusterService.getNodes()
+                        .stream()
+                        .map(ControllerNode::id)
+                        .collect(Collectors.toSet()));
     }
 
     @Override
@@ -154,6 +163,9 @@ public class ClusterCommunicationManager
         ControllerNode node = clusterService.getNode(toNodeId);
         checkArgument(node != null, "Unknown nodeId: %s", toNodeId);
         Endpoint nodeEp = new Endpoint(node.ip(), node.tcpPort());
+        if (!statisticsFlag) {
+            handleSendedMessage(nodeEp, subject.value(), payload);
+        }
         return messagingService.sendAndReceive(nodeEp, subject.value(), payload);
     }
 
@@ -173,10 +185,10 @@ public class ClusterCommunicationManager
 
     @Override
     public <M, R> void addSubscriber(MessageSubject subject,
-            Function<byte[], M> decoder,
-            Function<M, R> handler,
-            Function<R, byte[]> encoder,
-            Executor executor) {
+                                     Function<byte[], M> decoder,
+                                     Function<M, R> handler,
+                                     Function<R, byte[]> encoder,
+                                     Executor executor) {
         messagingService.registerHandler(subject.value(),
                 new InternalMessageResponder<M, R>(decoder, encoder, m -> {
                     CompletableFuture<R> responseFuture = new CompletableFuture<>();
@@ -193,22 +205,55 @@ public class ClusterCommunicationManager
 
     @Override
     public <M, R> void addSubscriber(MessageSubject subject,
-            Function<byte[], M> decoder,
-            Function<M, CompletableFuture<R>> handler,
-            Function<R, byte[]> encoder) {
+                                     Function<byte[], M> decoder,
+                                     Function<M, CompletableFuture<R>> handler,
+                                     Function<R, byte[]> encoder) {
         messagingService.registerHandler(subject.value(),
                 new InternalMessageResponder<>(decoder, encoder, handler));
     }
 
     @Override
     public <M> void addSubscriber(MessageSubject subject,
-            Function<byte[], M> decoder,
-            Consumer<M> handler,
-            Executor executor) {
+                                  Function<byte[], M> decoder,
+                                  Consumer<M> handler,
+                                  Executor executor) {
         messagingService.registerHandler(subject.value(),
                 new InternalMessageConsumer<>(decoder, handler),
                 executor);
     }
+
+    private void handleReceivedMessage(ClusterMessage message) {
+        if (null != statistician) {
+            statistician.handleReceivedMessage(message);
+        }
+    }
+
+    private void handleSendedMessage(Endpoint ep, String type, byte[] payload) {
+        if (null != statistician) {
+            statistician.handleSendedMessage(ep, type, payload);
+        }
+    }
+
+    @Override
+    public void startMessageStatistics() {
+        if (null == statistician) {
+            NodeId localId = clusterService.getLocalNode().id();
+            statistician = new ClusterMessageStatistician(this);
+        }
+        statisticsFlag = true;
+    }
+
+    @Override
+    public void stopMessageStatistics() {
+        statisticsFlag = false;
+    }
+
+    @Override
+    public void restartMessageStatistics() {
+        statistician = null;
+        startMessageStatistics();
+    }
+
 
     private class InternalClusterMessageHandler implements Function<byte[], byte[]> {
         private ClusterMessageHandler handler;
@@ -258,4 +303,28 @@ public class ClusterCommunicationManager
             consumer.accept(decoder.apply(ClusterMessage.fromBytes(bytes).payload()));
         }
     }
+
+    public NodeId getLocalNodeId() {
+        return clusterService.getLocalNode().id();
+    }
+
+    public Endpoint getEndPointByNodeId(NodeId nodeId) {
+        ControllerNode node = clusterService.getNode(nodeId);
+        checkArgument(node != null, "Unknown nodeId: %s", nodeId);
+        Endpoint nodeEp = new Endpoint(node.ip(), node.tcpPort());
+        return nodeEp;
+    }
+    public Map<Endpoint,Long> getReceivedMessageCount(){
+        if(null != statistician){
+            return statistician.getReceivedMessageCount();
+        }
+        return null;
+    }
+    public Map<Endpoint,Long> getSendedMessageCount(){
+        if(null != statistician){
+            return statistician.getSendedMessageCount();
+        }
+        return null;
+    }
+
 }
