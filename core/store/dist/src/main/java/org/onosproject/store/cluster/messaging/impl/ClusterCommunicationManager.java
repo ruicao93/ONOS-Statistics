@@ -15,16 +15,12 @@
  */
 package org.onosproject.store.cluster.messaging.impl;
 
-import com.sun.org.apache.bcel.internal.classfile.Node;
-import com.sun.org.apache.xml.internal.serializer.utils.Messages;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.ReferenceCardinality;
 import org.apache.felix.scr.annotations.Service;
-import org.onlab.netty.InternalMessage;
-import org.onlab.nio.Message;
 import org.onlab.util.Tools;
 import org.onosproject.cluster.ClusterService;
 import org.onosproject.cluster.ControllerNode;
