@@ -159,7 +159,7 @@ public class ClusterCommunicationManager
         ControllerNode node = clusterService.getNode(toNodeId);
         checkArgument(node != null, "Unknown nodeId: %s", toNodeId);
         Endpoint nodeEp = new Endpoint(node.ip(), node.tcpPort());
-        if (!statisticsFlag) {
+        if (statisticsFlag) {
             handleSendedMessage(nodeEp, subject.value(), payload);
         }
         return messagingService.sendAndReceive(nodeEp, subject.value(), payload);
@@ -261,6 +261,9 @@ public class ClusterCommunicationManager
         @Override
         public byte[] apply(byte[] bytes) {
             ClusterMessage message = ClusterMessage.fromBytes(bytes);
+            if(statisticsFlag){
+                handleReceivedMessage(message);
+            }
             handler.handle(message);
             return message.response();
         }
@@ -281,7 +284,11 @@ public class ClusterCommunicationManager
 
         @Override
         public CompletableFuture<byte[]> apply(byte[] bytes) {
-            return handler.apply(decoder.apply(ClusterMessage.fromBytes(bytes).payload())).thenApply(encoder);
+            ClusterMessage message = ClusterMessage.fromBytes(bytes);
+            if(statisticsFlag){
+                handleReceivedMessage(message);
+            }
+            return handler.apply(decoder.apply(message.payload())).thenApply(encoder);
         }
     }
 
@@ -296,7 +303,11 @@ public class ClusterCommunicationManager
 
         @Override
         public void accept(byte[] bytes) {
-            consumer.accept(decoder.apply(ClusterMessage.fromBytes(bytes).payload()));
+            ClusterMessage message = ClusterMessage.fromBytes(bytes);
+            if(statisticsFlag){
+                handleReceivedMessage(message);
+            }
+            consumer.accept(decoder.apply(message.payload()));
         }
     }
 
