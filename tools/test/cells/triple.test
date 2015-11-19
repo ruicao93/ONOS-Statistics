@@ -1,0 +1,14 @@
+# Local VirtualBox-based ONOS instances 1,2,3 & ONOS mininet box
+
+export ONOS_NIC=192.168.0.*
+export OC1="192.168.0.71"
+export OC2="192.168.0.72"
+export OC3="192.168.0.73"
+export OC4="192.168.0.74"
+export OCN="192.168.0.75"
+
+export ONOS_APPS="drivers,openflow,fwd,proxyarp,mobility"
+
+export ONOS_USER="oxp"
+export ONOS_GROUP="oxp"
+export ONOS_FEATURES="webconsole,onos-api,onos-core,onos-cli"
