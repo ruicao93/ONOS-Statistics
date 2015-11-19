@@ -19,7 +19,9 @@
         <command>
             <action class="org.onosproject.cli.SummaryCommand"/>
         </command>
-
+        <command>
+            <action class="org.apache.karaf.shell.commands.Command.ClusterCommunicationCommand"/>
+        </command>
         <command>
             <action class="org.onosproject.cli.security.ReviewCommand"/>
             <completers>

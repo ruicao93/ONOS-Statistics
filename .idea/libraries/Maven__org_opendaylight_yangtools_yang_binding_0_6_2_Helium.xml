@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.opendaylight.yangtools:yang-binding:0.6.2-Helium">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/opendaylight/yangtools/yang-binding/0.6.2-Helium/yang-binding-0.6.2-Helium.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/opendaylight/yangtools/yang-binding/0.6.2-Helium/yang-binding-0.6.2-Helium-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/opendaylight/yangtools/yang-binding/0.6.2-Helium/yang-binding-0.6.2-Helium-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

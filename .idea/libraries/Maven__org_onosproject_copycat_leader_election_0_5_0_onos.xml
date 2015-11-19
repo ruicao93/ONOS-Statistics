@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.onosproject:copycat-leader-election:0.5.0.onos">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/onosproject/copycat-leader-election/0.5.0.onos/copycat-leader-election-0.5.0.onos.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/onosproject/copycat-leader-election/0.5.0.onos/copycat-leader-election-0.5.0.onos-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/onosproject/copycat-leader-election/0.5.0.onos/copycat-leader-election-0.5.0.onos-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/tools/package/archetypes/api/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/tools/package/archetypes/bundle/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/tools/package/archetypes/cli/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/tools/package/archetypes/ui/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-vtn" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-vtn" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-dhcp" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-dhcp" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-election" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-election" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-intent-perf" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-intent-perf" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-messaging-perf" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-messaging-perf" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-config" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-config" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-demo" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-demo" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-distributed-primitives" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-distributed-primitives" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-incubator-api" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-incubator-api" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-incubator-net" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-incubator-net" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-incubator-store" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-incubator-store" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-api-archetype" />
+        <module name="onos-bundle-archetype" />
+        <module name="onos-cli-archetype" />
+        <module name="onos-ui-archetype" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-cli" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-cli" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-vtnrsc" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-vtnrsc" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-drivers" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-drivers" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-branding" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-branding" />
+      </profile>
+      <profile default="false" name="Annotation profile for onlab-junit" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onlab-junit" />
+      </profile>
+      <profile default="false" name="Annotation profile for onlab-misc" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onlab-misc" />
+      </profile>
+      <profile default="false" name="Annotation profile for onlab-netty" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onlab-netty" />
+      </profile>
+      <profile default="false" name="Annotation profile for onlab-nio" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onlab-nio" />
+      </profile>
+      <profile default="false" name="Annotation profile for onlab-osgi" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onlab-osgi" />
+      </profile>
+      <profile default="false" name="Annotation profile for onlab-rest" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onlab-rest" />
+      </profile>
+      <profile default="false" name="Annotation profile for onlab-thirdparty" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onlab-thirdparty" />
+      </profile>
+      <profile default="false" name="Annotation profile for onlab-stc" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onlab-stc" />
+      </profile>
+      <profile default="false" name="Annotation profile for jdvue" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="jdvue" />
+      </profile>
+      <profile default="false" name="Annotation profile for onlab-jnc-osgi" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onlab-jnc-osgi" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-api" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-api" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-core-common" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-core-common" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-core-net" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-core-net" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-security" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-security" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-core-dist" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-core-dist" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-core-serializers" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-core-serializers" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-gui" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-gui" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-rest" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-rest" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-of-api" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-of-api" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-of-ctl" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-of-ctl" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-ovsdb-api" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-ovsdb-api" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-ovsdb-rfc" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-ovsdb-rfc" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-ovsdb-ctl" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-ovsdb-ctl" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-pcep-controller-api" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-pcep-controller-api" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-pcep-controller-impl" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-pcep-controller-impl" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-pcepio" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-pcepio" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-lldp-provider" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-lldp-provider" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-host-provider" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-host-provider" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-null-provider" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-null-provider" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-of-provider-device" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-of-provider-device" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-of-provider-packet" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-of-provider-packet" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-of-provider-flow" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-of-provider-flow" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-of-provider-group" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-of-provider-group" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-of-provider-meter" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-of-provider-meter" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-netconf-provider-device" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-netconf-provider-device" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-netconf-provider-flow" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-netconf-provider-flow" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-pcep-provider-topology" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-pcep-provider-topology" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-pcep-provider-tunnel" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-pcep-provider-tunnel" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-ovsdb-provider-device" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-ovsdb-provider-device" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-ovsdb-provider-host" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-ovsdb-provider-host" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-ovsdb-provider-tunnel" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-ovsdb-provider-tunnel" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-aaa" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-aaa" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-acl" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-acl" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-fwd" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-fwd" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-mobility" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-mobility" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-proxyarp" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-proxyarp" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-sdnip" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-sdnip" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-optical" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-optical" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-metrics" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-metrics" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-routing" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-routing" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-routing-api" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-routing-api" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-reactive-routing" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-reactive-routing" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-virtualbng" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-virtualbng" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-bgprouter" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-bgprouter" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-segmentrouting" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-segmentrouting" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-cordfabric" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-cordfabric" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-xos-integration" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-xos-integration" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-pcep-api" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-pcep-api" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-olt" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-olt" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-cip" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-cip" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-flowanalyzer" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-flowanalyzer" />
+      </profile>
+      <profile default="false" name="Annotation profile for onos-app-vtnweb" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="onos-app-vtnweb" />
+      </profile>
+      <profile default="false" name="Annotation profile for cc" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="cc" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cc" target="1.8" />
+      <module name="jdvue" target="1.8" />
+      <module name="onlab-jnc-osgi" target="1.8" />
+      <module name="onlab-junit" target="1.8" />
+      <module name="onlab-misc" target="1.8" />
+      <module name="onlab-netty" target="1.8" />
+      <module name="onlab-nio" target="1.8" />
+      <module name="onlab-osgi" target="1.8" />
+      <module name="onlab-rest" target="1.8" />
+      <module name="onlab-stc" target="1.8" />
+      <module name="onlab-thirdparty" target="1.8" />
+      <module name="onlab-utils" target="1.5" />
+      <module name="onos" target="1.5" />
+      <module name="onos-api" target="1.8" />
+      <module name="onos-api-archetype" target="1.5" />
+      <module name="onos-app-aaa" target="1.8" />
+      <module name="onos-app-acl" target="1.8" />
+      <module name="onos-app-bgprouter" target="1.8" />
+      <module name="onos-app-cip" target="1.8" />
+      <module name="onos-app-config" target="1.8" />
+      <module name="onos-app-cordfabric" target="1.8" />
+      <module name="onos-app-demo" target="1.8" />
+      <module name="onos-app-dhcp" target="1.8" />
+      <module name="onos-app-distributed-primitives" target="1.8" />
+      <module name="onos-app-election" target="1.8" />
+      <module name="onos-app-flowanalyzer" target="1.8" />
+      <module name="onos-app-fwd" target="1.8" />
+      <module name="onos-app-intent-perf" target="1.8" />
+      <module name="onos-app-messaging-perf" target="1.8" />
+      <module name="onos-app-metrics" target="1.8" />
+      <module name="onos-app-mobility" target="1.8" />
+      <module name="onos-app-olt" target="1.8" />
+      <module name="onos-app-optical" target="1.8" />
+      <module name="onos-app-pcep-api" target="1.8" />
+      <module name="onos-app-proxyarp" target="1.8" />
+      <module name="onos-app-reactive-routing" target="1.8" />
+      <module name="onos-app-routing" target="1.8" />
+      <module name="onos-app-routing-api" target="1.8" />
+      <module name="onos-app-sdnip" target="1.8" />
+      <module name="onos-app-segmentrouting" target="1.8" />
+      <module name="onos-app-virtualbng" target="1.8" />
+      <module name="onos-app-vtn" target="1.8" />
+      <module name="onos-app-vtnrsc" target="1.8" />
+      <module name="onos-app-vtnweb" target="1.8" />
+      <module name="onos-app-xos-integration" target="1.8" />
+      <module name="onos-apps" target="1.5" />
+      <module name="onos-apps-test" target="1.5" />
+      <module name="onos-archetypes" target="1.5" />
+      <module name="onos-branding" target="1.8" />
+      <module name="onos-bundle-archetype" target="1.5" />
+      <module name="onos-cli" target="1.8" />
+      <module name="onos-cli-archetype" target="1.5" />
+      <module name="onos-core" target="1.5" />
+      <module name="onos-core-common" target="1.8" />
+      <module name="onos-core-dist" target="1.8" />
+      <module name="onos-core-net" target="1.8" />
+      <module name="onos-core-serializers" target="1.8" />
+      <module name="onos-core-store" target="1.5" />
+      <module name="onos-drivers" target="1.8" />
+      <module name="onos-features" target="1.5" />
+      <module name="onos-gui" target="1.8" />
+      <module name="onos-host-provider" target="1.8" />
+      <module name="onos-incubator" target="1.5" />
+      <module name="onos-incubator-api" target="1.8" />
+      <module name="onos-incubator-net" target="1.8" />
+      <module name="onos-incubator-store" target="1.8" />
+      <module name="onos-lldp-provider" target="1.8" />
+      <module name="onos-netconf" target="1.5" />
+      <module name="onos-netconf-provider-device" target="1.8" />
+      <module name="onos-netconf-provider-flow" target="1.8" />
+      <module name="onos-netconf-providers" target="1.5" />
+      <module name="onos-null-provider" target="1.8" />
+      <module name="onos-of" target="1.5" />
+      <module name="onos-of-api" target="1.8" />
+      <module name="onos-of-ctl" target="1.8" />
+      <module name="onos-of-provider-device" target="1.8" />
+      <module name="onos-of-provider-flow" target="1.8" />
+      <module name="onos-of-provider-group" target="1.8" />
+      <module name="onos-of-provider-meter" target="1.8" />
+      <module name="onos-of-provider-packet" target="1.8" />
+      <module name="onos-of-providers" target="1.5" />
+      <module name="onos-openflow" target="1.5" />
+      <module name="onos-ovsdatabase" target="1.5" />
+      <module name="onos-ovsdb" target="1.5" />
+      <module name="onos-ovsdb-api" target="1.8" />
+      <module name="onos-ovsdb-ctl" target="1.8" />
+      <module name="onos-ovsdb-provider-device" target="1.8" />
+      <module name="onos-ovsdb-provider-host" target="1.8" />
+      <module name="onos-ovsdb-provider-tunnel" target="1.8" />
+      <module name="onos-ovsdb-providers" target="1.5" />
+      <module name="onos-ovsdb-rfc" target="1.8" />
+      <module name="onos-pcep" target="1.5" />
+      <module name="onos-pcep-controller" target="1.5" />
+      <module name="onos-pcep-controller-api" target="1.8" />
+      <module name="onos-pcep-controller-impl" target="1.8" />
+      <module name="onos-pcep-provider-topology" target="1.8" />
+      <module name="onos-pcep-provider-tunnel" target="1.8" />
+      <module name="onos-pcep-providers" target="1.5" />
+      <module name="onos-pcepio" target="1.8" />
+      <module name="onos-providers" target="1.5" />
+      <module name="onos-rest" target="1.8" />
+      <module name="onos-security" target="1.8" />
+      <module name="onos-ui-archetype" target="1.5" />
+      <module name="onos-web" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
