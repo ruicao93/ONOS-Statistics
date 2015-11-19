@@ -219,12 +219,14 @@ public class ClusterCommunicationManager
     }
 
     private void handleReceivedMessage(ClusterMessage message) {
+        log.info("将要处理message receive统计"  + message.toString());
         if (null != statistician) {
             statistician.handleReceivedMessage(message);
         }
     }
 
     private void handleSendedMessage(Endpoint ep, String type, byte[] payload) {
+        log.info("将要处理message send统计" + ep.toString() + " " + type + " " + String.valueOf(payload));
         if (null != statistician) {
             statistician.handleSendedMessage(ep, type, payload);
         }
@@ -246,6 +248,7 @@ public class ClusterCommunicationManager
 
     @Override
     public void restartMessageStatistics() {
+        statisticsFlag = false;
         statistician = null;
         startMessageStatistics();
     }
