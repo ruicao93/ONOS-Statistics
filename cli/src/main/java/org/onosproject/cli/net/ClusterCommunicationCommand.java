@@ -16,7 +16,7 @@ import java.util.Map;
 public class ClusterCommunicationCommand extends AbstractShellCommand{
 
     @Argument(index = 0, name = "command ", description = "start/stop/restart",
-            required = true, multiValued = false)
+            required = false, multiValued = false)
     String command = null;
 
     private ClusterCommunicationService clusterCommunicationService;
