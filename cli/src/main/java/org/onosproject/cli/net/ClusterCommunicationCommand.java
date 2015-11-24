@@ -5,6 +5,7 @@ import org.apache.karaf.shell.commands.Command;
 import org.onosproject.cli.AbstractShellCommand;
 import org.onosproject.store.cluster.messaging.ClusterCommunicationService;
 import org.onosproject.store.cluster.messaging.Endpoint;
+import org.onosproject.store.cluster.messaging.MessageSubject;
 
 import java.util.Map;
 
@@ -44,13 +45,44 @@ public class ClusterCommunicationCommand extends AbstractShellCommand{
             return;
         }
         print("获取ClusterCommunicationService成功，class的类型为：" + clusterCommunicationService.getClass());
-        Map<Endpoint,Long> countMap = clusterCommunicationService.getReceivedMessageCount();
-        if(null != countMap){
-            for(Endpoint ep : countMap.keySet()){
-                print(ep.toString() + "  " + countMap.get(ep));
+        Map<Endpoint,Map<MessageSubject,Long>> receivedCountMap = clusterCommunicationService.getReceivedMessageCount();
+        Map<Endpoint,Map<MessageSubject,Long>> receivedLengthMap = clusterCommunicationService.getReceivedMessageLength();
+        Map<Endpoint,Map<MessageSubject,Long>> sendedCountMap = clusterCommunicationService.getSendedMessageCount();
+        Map<Endpoint,Map<MessageSubject,Long>> sendedLengthMap = clusterCommunicationService.getSendedMessageLength();
+        if(null != receivedCountMap){
+            print("接收消息统计");
+            for(Endpoint ep : receivedCountMap.keySet()){
+                Map<MessageSubject,Long> messageCountMap = receivedCountMap.get(ep);
+                Map<MessageSubject,Long> messageLengthMap = receivedLengthMap.get(ep);
+                for(MessageSubject messageSubject : messageCountMap.keySet()){
+                    Long messageLength = null;
+                    if(null != messageLengthMap){
+                        messageLength = messageLengthMap.get(messageSubject);
+                    }
+                    print(ep.toString() + "  " +  messageCountMap.get(messageSubject) + "  "
+                            + receivedCountMap.get(ep) + "  " + messageLength) ;
+                }
             }
         }else{
-            print("countMap是空的，呜呜~~~");
+            print("接收消息统计为空");
         }
+        if(null != sendedCountMap){
+            print("发送消息统计");
+            for(Endpoint ep : sendedCountMap.keySet()){
+                Map<MessageSubject,Long> messageCountMap = sendedCountMap.get(ep);
+                Map<MessageSubject,Long> messageLengthMap = sendedLengthMap.get(ep);
+                for(MessageSubject messageSubject : messageCountMap.keySet()){
+                    Long messageLength = null;
+                    if(null != messageLengthMap){
+                        messageLength = messageLengthMap.get(messageSubject);
+                    }
+                    print(ep.toString() + "  " +  messageCountMap.get(messageSubject) + "  "
+                            + receivedCountMap.get(ep) + "  " + messageLength) ;
+                }
+            }
+        }else{
+            print("接收消息统计为空");
+        }
+
     }
 }

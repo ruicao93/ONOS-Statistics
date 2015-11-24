@@ -324,17 +324,35 @@ public class ClusterCommunicationManager
         Endpoint nodeEp = new Endpoint(node.ip(), node.tcpPort());
         return nodeEp;
     }
-    public Map<Endpoint,Long> getReceivedMessageCount(){
+    public  Map<Endpoint,Map<MessageSubject,Long>> getReceivedMessageCount(){
         if(null != statistician){
             return statistician.getReceivedMessageCount();
         }
         return null;
     }
-    public Map<Endpoint,Long> getSendedMessageCount(){
+    public  Map<Endpoint,Map<MessageSubject,Long>> getSendedMessageCount(){
         if(null != statistician){
             return statistician.getSendedMessageCount();
         }
         return null;
     }
+    public Map<Endpoint, Map<MessageSubject, Long>> getReceivedMessageLength() {
+        if(null != statistician){
+            return statistician.getReceivedMessageLength();
+        }
+        return null;
+    }
 
+    public Map<Endpoint, Map<MessageSubject, Long>> getSendedMessageLength() {
+        if(null != statistician){
+            return statistician.getSendedMessageLength();
+        }
+        return null;
+    }
+    public Endpoint getLocalEp(){
+        ControllerNode node = clusterService.getNode(localNodeId);
+        checkArgument(node != null, "Unknown nodeId: %s", localNodeId);
+        Endpoint nodeEp = new Endpoint(node.ip(), node.tcpPort());
+        return nodeEp;
+    }
 }

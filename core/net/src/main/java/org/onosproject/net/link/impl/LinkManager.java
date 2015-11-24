@@ -93,9 +93,9 @@ public class LinkManager
 
     @Activate
     public void activate() {
-        store.setDelegate(delegate);
-        eventDispatcher.addSink(LinkEvent.class, listenerRegistry);
-        deviceService.addListener(deviceListener);
+        store.setDelegate(delegate);   //accept event notified by store
+        eventDispatcher.addSink(LinkEvent.class, listenerRegistry);//accept event to be posted and dispatcher them to appropriate sink
+        deviceService.addListener(deviceListener);//process events form deviceService which have influnce to link
         networkConfigService.addListener(networkConfigListener);
         log.info("Started");
     }

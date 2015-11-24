@@ -169,6 +169,8 @@ public interface ClusterCommunicationService {
     void startMessageStatistics();
     void stopMessageStatistics();
     void restartMessageStatistics();
-    public Map<Endpoint,Long> getReceivedMessageCount();
-    public Map<Endpoint,Long> getSendedMessageCount();
+    public  Map<Endpoint,Map<MessageSubject,Long>> getReceivedMessageCount();
+    public  Map<Endpoint,Map<MessageSubject,Long>> getSendedMessageCount();
+    public Map<Endpoint, Map<MessageSubject, Long>> getReceivedMessageLength();
+    public Map<Endpoint, Map<MessageSubject, Long>> getSendedMessageLength();
 }
