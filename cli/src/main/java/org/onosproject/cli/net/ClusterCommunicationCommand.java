@@ -59,8 +59,8 @@ public class ClusterCommunicationCommand extends AbstractShellCommand{
                     if(null != messageLengthMap){
                         messageLength = messageLengthMap.get(messageSubject);
                     }
-                    print(ep.toString() + "  " +  messageCountMap.get(messageSubject) + "  "
-                            + receivedCountMap.get(ep) + "  " + messageLength) ;
+                    print(ep.toString() + "  " +  messageSubject + "  "
+                            + messageCountMap.get(messageSubject) + "  " + messageLength) ;
                 }
             }
         }else{
@@ -76,8 +76,8 @@ public class ClusterCommunicationCommand extends AbstractShellCommand{
                     if(null != messageLengthMap){
                         messageLength = messageLengthMap.get(messageSubject);
                     }
-                    print(ep.toString() + "  " +  messageCountMap.get(messageSubject) + "  "
-                            + receivedCountMap.get(ep) + "  " + messageLength) ;
+                    print(ep.toString() + "  " + messageSubject + "  "
+                            +  messageCountMap.get(messageSubject) + "  " + messageLength) ;
                 }
             }
         }else{
