@@ -44,6 +44,7 @@ public class ClusterMessageStatistician {
         MessageSubject messageSubjectCount = new MessageSubject(type);
         if(null == mc){
             mc = new HashMap<MessageSubject,Long>();
+            sendCount.put(ep,mc);
         }
         Long count = mc.get(messageSubjectCount);
         if(null == count){
@@ -57,6 +58,7 @@ public class ClusterMessageStatistician {
         Map<MessageSubject,Long> ml = sendLength.get(ep);
         if(null == ml){
             ml = new HashMap<MessageSubject,Long>();
+            sendLength.put(ep,ml);
         }
         Long length = ml.get(messageSubjectLength);
         if(null == length){
@@ -74,6 +76,7 @@ public class ClusterMessageStatistician {
         MessageSubject messageSubjectCount = message.subject();
         if(null == mc){
             mc = new HashMap<MessageSubject,Long>();
+            receiveCount.put(ep,mc);
         }
         Long count = mc.get(messageSubjectCount);
         if(null == count){
@@ -87,6 +90,7 @@ public class ClusterMessageStatistician {
         Map<MessageSubject,Long> ml = receiveLength.get(ep);
         if(null == ml){
             ml = new HashMap<MessageSubject,Long>();
+            receiveLength.put(ep,ml);
         }
         Long length = ml.get(messageSubjectLength);
         if(null == length){
