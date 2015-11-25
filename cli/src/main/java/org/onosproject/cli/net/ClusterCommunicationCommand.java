@@ -81,7 +81,7 @@ public class ClusterCommunicationCommand extends AbstractShellCommand{
                 }
             }
         }else{
-            print("接收消息统计为空");
+            print("发送消息统计为空");
         }
 
     }

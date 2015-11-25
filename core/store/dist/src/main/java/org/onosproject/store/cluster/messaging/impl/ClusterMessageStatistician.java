@@ -64,9 +64,9 @@ public class ClusterMessageStatistician {
         }
         Long length = ml.get(messageSubjectLength);
         if(null == length){
-            ml.put(messageSubjectLength,1L);
+            ml.put(messageSubjectLength,getLength(internalMessage));
         }else{
-            ml.put(messageSubjectLength,++length);
+            ml.put(messageSubjectLength,length + getLength(internalMessage));
         }
     }
 

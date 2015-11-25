@@ -152,6 +152,9 @@ public class ClusterCommunicationManager
         ControllerNode node = clusterService.getNode(toNodeId);
         checkArgument(node != null, "Unknown nodeId: %s", toNodeId);
         Endpoint nodeEp = new Endpoint(node.ip(), node.tcpPort());
+        if (statisticsFlag) {
+            handleSendedMessage(nodeEp, subject.value(), payload);
+        }
         return messagingService.sendAsync(nodeEp, subject.value(), payload);
     }
 
