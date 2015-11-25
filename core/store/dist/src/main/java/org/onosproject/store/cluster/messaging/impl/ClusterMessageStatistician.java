@@ -1,7 +1,9 @@
 package org.onosproject.store.cluster.messaging.impl;
 
+import com.google.common.base.Charsets;
 import org.onlab.netty.InternalMessage;
 import org.onlab.nio.Message;
+import org.onlab.packet.IpAddress;
 import org.onosproject.cluster.ControllerNode;
 import org.onosproject.cluster.NodeId;
 import org.onosproject.store.cluster.messaging.ClusterMessage;
@@ -94,9 +96,9 @@ public class ClusterMessageStatistician {
         }
         Long length = ml.get(messageSubjectLength);
         if(null == length){
-            ml.put(messageSubjectLength,1L);
+            ml.put(messageSubjectLength,getLength(internalMessage));
         }else{
-            ml.put(messageSubjectLength,++length);
+            ml.put(messageSubjectLength,length + getLength(internalMessage));
         }
     }
 
@@ -138,5 +140,35 @@ public class ClusterMessageStatistician {
         InternalMessage internalMessage = null;
         internalMessage = new InternalMessage(0,clusterCommunicationManager.getEndPointByNodeId(message.sender()),message.subject().value(),message.payload());
         return internalMessage;
+    }
+
+    private long getLength(InternalMessage message){
+        long length = 0;
+        if(null == message) return length;
+        //messageId length
+        length += Long.BYTES;
+        Endpoint sender = message.sender();
+        //IpAddress length
+        IpAddress senderIp = sender.host();
+        length += 1;
+        length += senderIp.toOctets().length;
+
+        //sender port length
+        length += Integer.BYTES;
+
+        byte[] messageTypeBytes = message.type().getBytes(Charsets.UTF_8);
+
+        //length of message type
+        length += messageTypeBytes.length;
+
+        //message type bytes
+        length += messageTypeBytes.length;
+
+        byte[] payload = message.payload();
+
+        //payload length
+        length += Integer.BYTES;
+        length += payload.length;
+        return length;
     }
 }
