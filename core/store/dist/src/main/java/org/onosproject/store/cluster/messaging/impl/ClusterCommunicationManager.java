@@ -68,6 +68,7 @@ public class ClusterCommunicationManager
     @Activate
     public void activate() {
         localNodeId = clusterService.getLocalNode().id();
+        startMessageStatistics();
         log.info("Started");
     }
 
