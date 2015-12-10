@@ -1,6 +1,8 @@
 package org.onosproject.store.cluster.messaging;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -12,19 +14,27 @@ public class MessageStatisticData {
 
     private MessageSubject messageSubject;
 
-    private Map<MessageSubject, Long> countStatistic;
+    private Map<MessageSubject, Map<String, Long>> statisticdData;
 
     private Map<MessageSubject, Long> lengthStatistic;
 
+    public static final String COUNT = "count";
+
+    public static final String LENGTH = "length";
+
     public MessageStatisticData(Endpoint ep) {
         this.ep = ep;
-        countStatistic = new HashMap<MessageSubject, Long>();
-        lengthStatistic = new HashMap<MessageSubject, Long>();
+        statisticdData = new HashMap<MessageSubject, Map<String, Long>>();
+        Map<String, Long> data = new HashMap<String, Long>();
+        data.put(COUNT, 0L);
+        data.put(LENGTH, 0L);
     }
 
     public MessageStatisticData() {
-        countStatistic = new HashMap<MessageSubject, Long>();
-        lengthStatistic = new HashMap<MessageSubject, Long>();
+        statisticdData = new HashMap<MessageSubject, Map<String, Long>>();
+        Map<String, Long> data = new HashMap<String, Long>();
+        data.put(COUNT, 0L);
+        data.put(LENGTH, 0L);
     }
 
     public Endpoint getEp() {
@@ -43,14 +53,6 @@ public class MessageStatisticData {
         this.messageSubject = messageSubject;
     }
 
-    public Map<MessageSubject, Long> getCountStatistic() {
-        return countStatistic;
-    }
-
-    public void setCountStatistic(Map<MessageSubject, Long> countStatistic) {
-        this.countStatistic = countStatistic;
-    }
-
     public Map<MessageSubject, Long> getLengthStatistic() {
         return lengthStatistic;
     }
@@ -60,20 +62,75 @@ public class MessageStatisticData {
     }
 
     public void addMssageCount(MessageSubject subject) {
-        Long count = countStatistic.get(subject);
-        if (null == count) {
-            count = 0L;
-        }
-        count++;
-        countStatistic.put(subject, count);
+        setCount(subject, getCount(subject) + 1);
     }
 
     public void addMessageLength(MessageSubject subject, long length) {
-        Long l = lengthStatistic.get(subject);
+        Long l = getLength(subject);
         if (null == l) {
             l = 0L;
         }
         l += length;
-        lengthStatistic.put(subject, l);
+        setLength(subject, l);
+    }
+
+    public long getCount(MessageSubject subject) {
+        long count = 0L;
+        Map<String, Long> dataMap = statisticdData.get(subject);
+        if (null == dataMap) {
+            count = 0L;
+            dataMap = new HashMap<String, Long>();
+            dataMap.put(COUNT, count);
+            dataMap.put(LENGTH, count);
+            statisticdData.put(subject, dataMap);
+        }
+        return count;
+    }
+    public long getLength(MessageSubject subject) {
+        long length = 0L;
+        Map<String, Long> dataMap = statisticdData.get(subject);
+        if (null == dataMap) {
+            length = 0L;
+            dataMap = new HashMap<String, Long>();
+            dataMap.put(COUNT, length);
+            dataMap.put(LENGTH, length);
+            statisticdData.put(subject, dataMap);
+        }
+        return length;
+    }
+
+    private void setCount(MessageSubject subject, Long count) {
+        Map<String, Long> dataMap = statisticdData.get(subject);
+        if (null == dataMap) {
+            dataMap = new HashMap<String, Long>();
+            dataMap.put(COUNT, 0L);
+            dataMap.put(LENGTH, 0L);
+            statisticdData.put(subject, dataMap);
+        }
+        dataMap.put(COUNT, count);
+    }
+
+    private void setLength(MessageSubject subject, Long length) {
+        Map<String, Long> dataMap = statisticdData.get(subject);
+        if (null == dataMap) {
+            dataMap = new HashMap<String, Long>();
+            dataMap.put(COUNT, 0L);
+            dataMap.put(LENGTH, 0L);
+            statisticdData.put(subject, dataMap);
+        }
+        dataMap.put(LENGTH, length);
+    }
+
+    public Map<MessageSubject, Map<String, Long>> getStatisticdData() {
+        return statisticdData;
+    }
+
+
+    public List<MessageSubject> getMessageSubjectList() {
+        List<MessageSubject> list = new ArrayList<MessageSubject>();
+        for (MessageSubject subject : getStatisticdData().keySet()) {
+            list.add(subject);
+        }
+        return list;
     }
 }

@@ -1,11 +1,14 @@
 package org.onosproject.cli.net;
 
-import org.apache.felix.scr.annotations.Reference;
-import org.apache.felix.scr.annotations.ReferenceCardinality;
 import org.apache.karaf.shell.commands.Argument;
 import org.apache.karaf.shell.commands.Command;
 import org.onosproject.cli.AbstractShellCommand;
 import org.onosproject.store.cluster.messaging.ClusterMessageStatisticService;
+import org.onosproject.store.cluster.messaging.Endpoint;
+import org.onosproject.store.cluster.messaging.MessageStatisticData;
+import org.onosproject.store.cluster.messaging.MessageSubject;
+
+import java.util.Map;
 
 /**
  * Created by cr on 15-12-9.
@@ -18,11 +21,17 @@ public class ClusterMessageStatisticCommand extends AbstractShellCommand {
             required = false, multiValued = false)
     String operation = null;
 
-    @Reference(cardinality = ReferenceCardinality.MANDATORY_UNARY)
     protected ClusterMessageStatisticService clusterMessageStatisticService;
 
     @Override
     protected void execute() {
+        if (null == clusterMessageStatisticService) {
+            clusterMessageStatisticService = getService(ClusterMessageStatisticService.class);
+        }
+        if (null == operation || operation.trim().isEmpty()) {
+            resultList();
+            return;
+        }
         switch (operation) {
             case "start":
                 clusterMessageStatisticService.start();
@@ -37,13 +46,24 @@ public class ClusterMessageStatisticCommand extends AbstractShellCommand {
                 print("restart message statistic");
                 break;
             default:
-                resultList();
+                print("argument not found,arg:%s", operation);
 
         }
         return;
     }
 
     private void resultList() {
-        print("cclist start working,arg:%s", operation);
+        Map<Endpoint, MessageStatisticData> msd = clusterMessageStatisticService.getMessageStatisticResult();
+        if (null == msd) {
+            print("Data is empty");
+            return;
+        }
+        print("Send message statistiacs:");
+        for (Endpoint ep : msd.keySet()) {
+            MessageStatisticData data = msd.get(ep);
+            for (MessageSubject subject : data.getMessageSubjectList()) {
+                print("%s %d %d", subject.toString(), data.getCount(subject), data.getLength(subject));
+            }
+        }
     }
 }

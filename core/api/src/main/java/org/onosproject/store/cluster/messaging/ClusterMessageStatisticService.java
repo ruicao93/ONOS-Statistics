@@ -1,6 +1,6 @@
 package org.onosproject.store.cluster.messaging;
 
-import java.util.List;
+import java.util.Map;
 
 /**
  * Created by cr on 15-12-9.
@@ -32,5 +32,5 @@ public interface ClusterMessageStatisticService {
      * the result of message statistics.
      * @return
      */
-    public List<MessageStatisticData> getMessageStatisticResult();
+    public Map<Endpoint, MessageStatisticData> getMessageStatisticResult();
 }

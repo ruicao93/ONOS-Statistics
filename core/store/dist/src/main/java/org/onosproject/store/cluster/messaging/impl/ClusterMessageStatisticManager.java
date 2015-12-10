@@ -2,6 +2,7 @@ package org.onosproject.store.cluster.messaging.impl;
 
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Deactivate;
 import org.apache.felix.scr.annotations.Service;
 import org.onlab.netty.InternalMessage;
 import org.onosproject.store.cluster.messaging.ClusterMessageStatisticService;
@@ -10,9 +11,10 @@ import org.onosproject.store.cluster.messaging.MessageStatisticData;
 import org.onosproject.store.cluster.messaging.MessageSubject;
 import org.onlab.packet.IpAddress;
 import com.google.common.base.Charsets;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -26,10 +28,16 @@ public class ClusterMessageStatisticManager implements ClusterMessageStatisticSe
 
     private Map<Endpoint, MessageStatisticData> msdMap = new HashMap<Endpoint, MessageStatisticData>();
 
+    private final Logger log = LoggerFactory.getLogger(getClass());
 
     @Activate
     public void activate() {
         start();
+    }
+
+    @Deactivate
+    public void deactivate() {
+        log.info("Stopped");
     }
 
     @Override
@@ -69,8 +77,8 @@ public class ClusterMessageStatisticManager implements ClusterMessageStatisticSe
     }
 
     @Override
-    public List<MessageStatisticData> getMessageStatisticResult() {
-        return null;
+    public Map<Endpoint, MessageStatisticData>  getMessageStatisticResult() {
+        return msdMap;
     }
 
     private void clearData() {
