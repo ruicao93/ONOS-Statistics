@@ -84,6 +84,7 @@ public class MessageStatisticData {
             dataMap.put(LENGTH, count);
             statisticdData.put(subject, dataMap);
         }
+        count = dataMap.get(COUNT);
         return count;
     }
     public long getLength(MessageSubject subject) {
@@ -96,6 +97,7 @@ public class MessageStatisticData {
             dataMap.put(LENGTH, length);
             statisticdData.put(subject, dataMap);
         }
+        length = dataMap.get(LENGTH);
         return length;
     }
 

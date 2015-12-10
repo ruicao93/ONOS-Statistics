@@ -62,7 +62,7 @@ public class ClusterMessageStatisticCommand extends AbstractShellCommand {
         for (Endpoint ep : msd.keySet()) {
             MessageStatisticData data = msd.get(ep);
             for (MessageSubject subject : data.getMessageSubjectList()) {
-                print("%s %d %d", subject.toString(), data.getCount(subject), data.getLength(subject));
+                print("%s %s %d %d", ep.toString(), subject.toString(), data.getCount(subject), data.getLength(subject));
             }
         }
     }
