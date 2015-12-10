@@ -177,9 +177,10 @@ public class NettyMessaging implements MessagingService {
                     channel = channels.borrowObject(ep);
                     channel.writeAndFlush(message).addListener(channelFuture -> {
                         if (!channelFuture.isSuccess()) {
-                            clusterMessageStatisticService.handleMessage(ep, message);
                             future.completeExceptionally(channelFuture.cause());
                         } else {
+                            clusterMessageStatisticService.handleMessage(ep, message);
+                            log.debug("handle message statistic");
                             future.complete(null);
                         }
                     });

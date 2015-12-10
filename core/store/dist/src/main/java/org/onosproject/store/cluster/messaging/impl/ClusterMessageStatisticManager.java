@@ -43,6 +43,7 @@ public class ClusterMessageStatisticManager implements ClusterMessageStatisticSe
     @Override
     public void start() {
         statisticFlag = true;
+        log.info("start cluster message statistic");
     }
 
     @Override
