@@ -1,6 +1,8 @@
-<<<<<<< HEAD
 ONOS : Open Network Operating System
 ====================================
+
+# ONOS-Statistics
+修改ONOS源码，添加统计代码，用于统计ONOS运行过程中同步所消耗的消息的数量及大小。
 
 ### What is ONOS?
 ONOS is a new SDN network operating system designed for high availability,
@@ -27,6 +29,4 @@ performance, scale-out.
 Checkout out our [website](http://www.onosproject.org) and our
 [tools](http://www.onosproject.org/software/#tools)
 =======
-# ONOS-OXP
-ONOS东西向实验
->>>>>>> ab3e36acbd78ccdf59c95ae1a2a76884aecf1d8e
+
